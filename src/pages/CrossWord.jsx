@@ -1,6 +1,9 @@
+import { HeaderLayout } from "../layout/HeaderLayout"
 
 export const CrossWord = () => {
   return (
-    <div>CrossWord</div>
+    <HeaderLayout>
+      <div>CrossWord</div>
+    </HeaderLayout>
   )
 }
