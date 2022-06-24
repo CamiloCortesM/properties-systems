@@ -7,7 +7,7 @@ import { SideBar } from "../components/SideBar";
 const drawerWidth = 240;
 
 export const HeaderLayout = ({ children }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const toggleDrawer = () => {
     setOpen(!open);
