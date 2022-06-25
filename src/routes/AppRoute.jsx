@@ -1,14 +1,17 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Quiz} from "../pages/Quiz";
-import { Wordle } from "../pages/Wordle";
+import { Quiz, Mission, Wordle } from "../pages";
 
 export const AppRoute = () => {
   return (
     <Routes>
-      <Route path="/crossword" element={<Quiz />} />
+      <Route path="/quiz" element={<Quiz />} />
 
       <Route path="/wordle" element={<Wordle />} />
+
+      
+
+      <Route path="/Mission" element={<Mission />} />
 
       <Route path="/*" element={<Wordle />} />
     </Routes>
