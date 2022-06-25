@@ -1,9 +1,9 @@
 import { HeaderLayout } from "../layout/HeaderLayout"
 
-export const CrossWord = () => {
+export const Quiz = () => {
   return (
     <HeaderLayout>
-      <div>CrossWord</div>
+      <div>Quiz</div>
     </HeaderLayout>
   )
 }

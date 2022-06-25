@@ -14,13 +14,13 @@ export const MainListItems = () => {
         <ListItemIcon>
           <AbcIcon />
         </ListItemIcon>
-        <ListItemText primary="Crucigrama" />
+        <ListItemText primary="Wordle" />
       </ListItemButton>
       <ListItemButton>
         <ListItemIcon>
           <VideogameAssetIcon />
         </ListItemIcon>
-        <ListItemText primary="Wordle" />
+        <ListItemText primary="Quiz" />
       </ListItemButton>
     </>
   );
