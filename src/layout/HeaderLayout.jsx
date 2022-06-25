@@ -20,12 +20,17 @@ export const HeaderLayout = ({ children }) => {
         open={open}
       />
 
-      <SideBar
-        toggleDrawer={toggleDrawer}
-        open={open}
-      />
+      <SideBar toggleDrawer={toggleDrawer} open={open} />
 
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box
+        component="main"
+        sx={{
+          backgroundColor: "primary.main",
+          flexGrow: 1,
+          height: "100vh",
+          overflow: "auto",
+        }}
+      >
         <Toolbar />
         {children}
       </Box>
