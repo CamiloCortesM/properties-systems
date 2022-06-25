@@ -1,7 +1,6 @@
-import { Badge, IconButton, Toolbar, Typography } from "@mui/material";
+import { Avatar, Badge, IconButton, Toolbar, Typography } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import MenuIcon from "@mui/icons-material/Menu";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import { styled } from "@mui/material/styles";
 
 const drawerWidth = 240;
@@ -24,8 +23,7 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-export const Navbar = ({ toggleDrawer ,open}) => {
-
+export const Navbar = ({ toggleDrawer, open }) => {
   return (
     <AppBar position="absolute" open={open}>
       <Toolbar
@@ -52,12 +50,22 @@ export const Navbar = ({ toggleDrawer ,open}) => {
           noWrap
           sx={{ flexGrow: 1 }}
         >
-         TGS Games
+          TGS Games
         </Typography>
-        <IconButton color="inherit">
-          <Badge color="secondary">
-            <GitHubIcon />
-          </Badge>
+        <Typography
+          component="span"
+          variant="p"
+          color="white"
+          sx={{
+            opacity: "85%",
+          }}
+        >
+          Camilo
+        </Typography>
+        <IconButton color="inherit" edge="end">
+          <Avatar atl="profile" sx={{ bgcolor: "#f77762"}}>
+            C
+          </Avatar>
         </IconButton>
       </Toolbar>
     </AppBar>
