@@ -1,8 +1,28 @@
 import { Divider, Grid, Typography } from "@mui/material";
+import { useState } from "react";
 import { CardAchievement } from "../components/CardAchievement";
+import { initialData } from "../helpers/initialData";
 import { HeaderLayout } from "../layout/HeaderLayout";
 
 export const Mission = () => {
+  const [first, setfirst] = useState(initialData());
+
+  // const handleSubmit = () => {
+  //   const data = getArchiByName();
+  //   setfirst([
+  //     ...data,
+  //     {
+  //       name: "logro2",
+  //       attributes: {
+  //         description: "putos",
+  //         complete: false,
+  //         progress: 0,
+  //         url: "image/url.png",
+  //       },
+  //     },
+  //   ]);
+  // };
+
   return (
     <HeaderLayout>
       <Grid
@@ -32,15 +52,19 @@ export const Mission = () => {
           </Typography>
           <Divider />
         </Grid>
-        <Grid container 
-        justifyContent="space-around"
-        alignItems="center" sx={{
-          mt:3
-        }}
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          alignContent="center"
+          spacing={2}
+          sx={{
+            mt: 3,
+          }}
         >
-          <Grid xs={12} md={3} item>
-              <CardAchievement />
-          </Grid>
+          {first.map((data) => {
+            return <CardAchievement {...data} key={data.id} />;
+          })}
         </Grid>
       </Grid>
     </HeaderLayout>
