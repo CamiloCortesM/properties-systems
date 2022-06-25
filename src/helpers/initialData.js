@@ -7,7 +7,7 @@ export const initialData = () => {
         description: "Juega por primera vez cualquier juego",
         complete: false,
         progress: 0,
-        url: "image/url.png",
+        url: "https://raw.githubusercontent.com/CamiloCortesM/tgs-games/main/src/assets/onesmalltrip.png",
       },
     },
     {
@@ -17,7 +17,7 @@ export const initialData = () => {
         description: "Completa el quiz de propiedades de los sistemas",
         complete: false,
         progress: 0,
-        url: "image/url.png",
+        url: "https://raw.githubusercontent.com/CamiloCortesM/tgs-games/main/src/assets/stylepoints.png",
       },
     },
 
@@ -28,7 +28,7 @@ export const initialData = () => {
         description: "Acaba con mayor puntuacion el Quiz de propiedades de los sistemas",
         complete: false,
         progress: 0,
-        url: "image/url.png",
+        url: "https://raw.githubusercontent.com/CamiloCortesM/tgs-games/main/src/assets/toptier.png",
       },
     },
 
@@ -39,7 +39,7 @@ export const initialData = () => {
         description: "Completa el modo de juego Wordle",
         complete: false,
         progress: 0,
-        url: "image/url.png",
+        url: "https://raw.githubusercontent.com/CamiloCortesM/tgs-games/main/src/assets/infallible.png",
       },
     },
   ];

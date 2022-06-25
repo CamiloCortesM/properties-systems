@@ -3,10 +3,9 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
-import image from "../assets/onesmalltrip.png";
 
 export const CardAchievement = ({ name, attributes }) => {
-  const { description, progress } = attributes;
+  const { description, progress,url } = attributes;
 
   return (
     <Grid lg={2} md={3} sm={4} xs={6} item>
@@ -14,7 +13,7 @@ export const CardAchievement = ({ name, attributes }) => {
           <CardMedia
             component="img"
             height="140"
-            image={image}
+            image={url}
             alt="green iguana"
           />
           <CardContent>
