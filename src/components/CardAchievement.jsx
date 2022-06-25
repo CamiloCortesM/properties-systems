@@ -1,35 +1,42 @@
-import * as React from "react";
-import { useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import { CardActionArea, Grid } from "@mui/material";
 import image from "../assets/logro.jpg";
 
-export const CardAchievement = () => {
+export const CardAchievement = ({ name, attributes }) => {
+  const { description, progress } = attributes;
+
   return (
-    <Card sx={{ display: "flex" }}>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <CardContent sx={{ flex: "1 0 auto" }}>
-          <Typography component="div" variant="h5">
-            Live From Space
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            color="text.secondary"
-            component="div"
-          >
-            Mac Miller
-          </Typography>
-        </CardContent>
-      </Box>
-      <CardMedia
-        component="img"
-        sx={{ width: 151 }}
-        image={image}
-        alt="Live from space album cover"
-      />
-    </Card>
+    <Grid lg={2} md={3} sm={4} xs={6} item>
+      <Card sx={{ maxWidth: 345, m: "auto", height:{lg:320, md:300, sm:320, xs:365} }}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="140"
+            image={image}
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div" >
+              {name}
+            </Typography>
+            <Typography
+              variant="body2"
+              component="p"
+              sx={{
+                mb: 1,
+              }}
+            >
+              {description}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {progress}%
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Grid>
   );
 };
