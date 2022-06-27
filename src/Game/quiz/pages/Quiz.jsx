@@ -7,7 +7,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { HeaderLayout } from "../layout/HeaderLayout";
+import { HeaderLayout } from "../../layout/HeaderLayout";
 
 export const Quiz = () => {
   return (

@@ -1,4 +1,4 @@
-import { HeaderLayout } from "../layout/HeaderLayout"
+import { HeaderLayout } from "../../layout/HeaderLayout"
 
 export const Wordle = () => {
   return (

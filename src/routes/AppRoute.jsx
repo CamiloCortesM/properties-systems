@@ -1,6 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Quiz, Mission, Wordle } from "../pages";
+import { Mission } from "../Game/mission/pages/Mission";
+import { Quiz } from "../Game/quiz/pages/Quiz";
+import { Wordle } from "../Game/wordle/pages/Wordle";
 
 export const AppRoute = () => {
   return (
@@ -9,9 +11,7 @@ export const AppRoute = () => {
 
       <Route path="/wordle" element={<Wordle />} />
 
-      
-
-      <Route path="/Mission" element={<Mission />} />
+      <Route path="/mission" element={<Mission />} />
 
       <Route path="/*" element={<Wordle />} />
     </Routes>

@@ -1,8 +1,9 @@
 import { Divider, Grid, Typography } from "@mui/material";
 import { useState } from "react";
 import { CardAchievement } from "../components/CardAchievement";
-import { initialData } from "../helpers/initialData";
-import { HeaderLayout } from "../layout/HeaderLayout";
+import { initialData } from "../../../helpers/initialData";
+import { HeaderLayout } from "../../layout/HeaderLayout";
+
 
 export const Mission = () => {
   const [first, setfirst] = useState(initialData());
