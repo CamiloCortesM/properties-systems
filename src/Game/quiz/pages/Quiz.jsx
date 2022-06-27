@@ -27,7 +27,7 @@ export const Quiz = () => {
             }}
           >
             <CardHeader
-              title="1/5"
+              title="1/10"
               sx={{
                 backgroundColor: "#ede7f6",
               }}
