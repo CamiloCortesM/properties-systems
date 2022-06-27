@@ -26,9 +26,12 @@ export const Quiz = () => {
               m: "auto",
             }}
           >
-            <CardHeader title="1/5" sx={{
-              backgroundColor:"#ede7f6",
-            }} />
+            <CardHeader
+              title="1/5"
+              sx={{
+                backgroundColor: "#ede7f6",
+              }}
+            />
             <CardContent
               sx={{
                 backgroundColor: "#ede7f6",
@@ -40,13 +43,12 @@ export const Quiz = () => {
                 alignItems="center"
                 direction="column"
               >
-                <Toolbar sx={{
-                  height:200
-                }}>
-                  <Typography
-                    variant="h6"
-                    color="primary"
-                  >
+                <Toolbar
+                  sx={{
+                    height: 200,
+                  }}
+                >
+                  <Typography variant="h6" color="primary">
                     ¿Esta es la preguntaasda sdsadasdsada sdadas dasdasd?
                   </Typography>
                 </Toolbar>
@@ -58,31 +60,51 @@ export const Quiz = () => {
               }}
             >
               <Grid container direction="row" spacing={1}>
-                <Grid item lg={6} >
-                  <Button variant="contained" color="primary" fullWidth sx={{
-                    height:100
-                  }}>
+                <Grid item lg={6}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    sx={{
+                      height: 100,
+                    }}
+                  >
                     sadsa
                   </Button>
                 </Grid>
                 <Grid item lg={6}>
-                  <Button variant="contained" color="primary" fullWidth sx={{
-                    height:100
-                  }}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    sx={{
+                      height: 100,
+                    }}
+                  >
                     sadsa
                   </Button>
                 </Grid>
                 <Grid item lg={6}>
-                  <Button variant="contained" color="primary" fullWidth sx={{
-                    height:100
-                  }}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    sx={{
+                      height: 100,
+                    }}
+                  >
                     sadsa
                   </Button>
                 </Grid>
                 <Grid item lg={6}>
-                  <Button variant="contained" color="primary" fullWidth sx={{
-                    height:100
-                  }}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    sx={{
+                      height: 100,
+                    }}
+                  >
                     sadsa
                   </Button>
                 </Grid>
