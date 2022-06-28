@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { MissionRoutes } from "../Game/mission/routes/MissionRoutes";
-import { QuizRoutes } from "../Game/quiz/routes/quizRoutes";
+import { QuizRoutes } from "../Game/quiz/routes/QuizRoutes";
 import { WordleRoutes } from "../Game/wordle/routes/WordleRoutes";
 
 export const AppRoute = () => {
