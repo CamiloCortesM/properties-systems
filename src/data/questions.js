@@ -1,6 +1,6 @@
 export const questions = [
     {
-        tittle: "¿pregunta 1?",
+        tittle: "¿pregunta ?",
         options: [
           { textResponse: "A", isCorrect: true },
           { textResponse: "B", isCorrect: false },
@@ -63,12 +63,12 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿pregunta 8?",
+        tittle: "¿Proceso que busca mantener la energia del sistema?",
         options: [
-          { textResponse: "A", isCorrect: false },
-          { textResponse: "B", isCorrect: true },
-          { textResponse: "C", isCorrect: false },
-          { textResponse: "D", isCorrect: false },
+          { textResponse: "Circularidad", isCorrect: false },
+          { textResponse: "Entropia", isCorrect: true },
+          { textResponse: "Morfogenesis", isCorrect: false },
+          { textResponse: "Homeostasis", isCorrect: false },
         ],
       },
       {
