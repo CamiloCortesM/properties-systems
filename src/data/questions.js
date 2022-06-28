@@ -1,11 +1,11 @@
 export const questions = [
     {
-        tittle: "¿pregunta ?",
+        tittle: "¿Propiedad que tiene un sistema de aprender y modificar un proceso?",
         options: [
-          { textResponse: "A", isCorrect: true },
-          { textResponse: "B", isCorrect: false },
-          { textResponse: "C", isCorrect: false },
-          { textResponse: "D", isCorrect: false },
+          { textResponse: "Adaptibilidad", isCorrect: true },
+          { textResponse: "Circularidad", isCorrect: false },
+          { textResponse: "Energia", isCorrect: false },
+          { textResponse: "Equilibrio", isCorrect: false },
         ],
       },
       {
