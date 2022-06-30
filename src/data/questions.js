@@ -9,30 +9,30 @@ export const questions = [
         ],
       },
       {
-        tittle: "Segun ______, Se puede hablar de una filosifia de sistemas, ya que toda teoria cientifica de gran alcance tiene aspectos metafisicos",
+        tittle: "¿Propiedad de un sistema que define su nivel de respuesta y de adaptacion al contexto?",
         options: [
-          { textResponse: "Kenneth Boulding", isCorrect: false },
-          { textResponse: "Ludwing von Bertanlanffy", isCorrect: true },
-          { textResponse: "Norbert Wiener", isCorrect: false },
-          { textResponse: "Anatol Rapoport", isCorrect: false },
+          { textResponse: "Estabilidad", isCorrect: false },
+          { textResponse: "Homeostasis", isCorrect: true },
+          { textResponse: "Mantenibilidad", isCorrect: false },
+          { textResponse: "Morfogenesis", isCorrect: false },
         ],
       },
       {
-        tittle: "¿Cuantas son las propiedades de un sistema?",
+        tittle: "¿Propiedad que tiene para representar a los sistemas cuando no se sabe que elementos o cosas  los componen?",
         options: [
-          { textResponse: "10", isCorrect: true },
-          { textResponse: "9", isCorrect: false },
-          { textResponse: "7", isCorrect: false },
-          { textResponse: "3", isCorrect: false },
+          { textResponse: "Caja negra", isCorrect: true },
+          { textResponse: "Centralizacion y descentralizacion", isCorrect: false },
+          { textResponse: "Conglomerado", isCorrect: false },
+          { textResponse: "Informacion", isCorrect: false },
         ],
       },
       {
-        tittle: "¿Segun la lectura, cuales son los tres tipos de sistemas que encontramos a diario en  nuestras vidas?",
+        tittle: "¿Propiedad que tiene sucesos y condiciones que influyen sobre el comportamineto de un sisi¡tema?",
         options: [
-          { textResponse: "Biologico,reales y cerrados", isCorrect: false },
-          { textResponse: "Reales,abstractos y abiertos", isCorrect: false },
-          { textResponse: "Informatico, operativo y dinamico", isCorrect: false },
-          { textResponse: "Naturales,artificiales y compuestos", isCorrect: true },
+          { textResponse: "Armonia", isCorrect: false },
+          { textResponse: "Superflua", isCorrect: false },
+          { textResponse: "Variabilidad", isCorrect: false },
+          { textResponse: "Ambiente", isCorrect: true },
         ],
       },
       {
@@ -81,10 +81,12 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿En terminos generales, los subsistemas tienen las mismas propiedades de los sistemas?",
+        tittle: "¿Propiedad que tiene el proceso que hace referencia a la introduccion de los resultados de las operaciones de un sistema en el mismo",
         options: [
-          { textResponse: "Verdadero", isCorrect: false },
-          { textResponse: "Falso", isCorrect: true },
+          { textResponse: "Adaptabilidad", isCorrect: false },
+          { textResponse: "Recursividad", isCorrect: true },
+          { textResponse: "Permeabilidad", isCorrect: false },
+          { textResponse: "Equifinalidad", isCorrect: false },
         ],
       },
 ]
