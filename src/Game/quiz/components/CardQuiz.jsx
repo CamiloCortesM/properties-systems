@@ -1,4 +1,5 @@
 import {
+  Button,
   Card,
   CardContent,
   CardHeader,
@@ -11,28 +12,57 @@ import { questions } from "../../../data/questions";
 import { ButtonAnswer } from "./ButtonAnswer";
 
 export const CardQuiz = () => {
-    
-    const [isFinished, setIsFinished] = useState(false);
-    const [puntuación, setPuntuación] = useState(0);
-    const [preguntaActual, setPreguntaActual] = useState(0);
-    const [tiempoRestante, setTiempoRestante] = useState(25);
-    const [areDisabled, setAreDisabled] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
+  const [score, setScore] = useState(0);
+  const [questionCurrent, setQuestionCurrent] = useState(0);
+  const [timeRestant, setTimeRestant] = useState(25);
+  const [areDisabled, setAreDisabled] = useState(false);
 
-    const handleAnswerSubmit =()=>{
-        if(preguntaActual == questions.length-1) return;
-
-        setPreguntaActual(preguntaActual+1)
-        setTiempoRestante(25);
+  const handleAnswerSubmit = (isCorrect) => {
+    setTimeRestant(25);
+    if (isCorrect) {
+      setScore(score + 1);
+      console.log(score);
     }
+    questionCurrent == questions.length - 1
+      ? setIsFinished(true)
+      : setQuestionCurrent(questionCurrent + 1);
+  };
 
-    useEffect(() => {
-        const intervalo = setInterval(() => {
-          if (tiempoRestante > 0) setTiempoRestante((prev) => prev - 1);
-          if (tiempoRestante === 0) setAreDisabled(true);
-        }, 1000);
-    
-        return () => clearInterval(intervalo);
-      }, [tiempoRestante]);
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      if (timeRestant > 0) setTimeRestant((prev) => prev - 1);
+      if (timeRestant === 0) setAreDisabled(true);
+    }, 1000);
+
+    return () => clearInterval(intervalo);
+  }, [timeRestant]);
+
+
+  if(isFinished)
+
+  return(
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+      sx={{
+        minHeight: "calc(100vh - 110px)",
+        backgroundColor: "primary.main",
+        padding: 4,
+        borderRadius: 3,
+      }}
+    >
+      <Grid item xs={12}>
+        <Typography variant="h5">
+            Puntuacion: {score}
+        </Typography>
+      </Grid>
+    </Grid>
+  );
+
 
   return (
     <Card
@@ -42,7 +72,7 @@ export const CardQuiz = () => {
       }}
     >
       <CardHeader
-        title={`${preguntaActual+1}/${questions.length}`}
+        title={`${questionCurrent + 1}/${questions.length}`}
         sx={{
           backgroundColor: "#ede7f6",
         }}
@@ -64,7 +94,7 @@ export const CardQuiz = () => {
             }}
           >
             <Typography variant="h6" color="primary">
-              {questions[preguntaActual].tittle}
+              {questions[questionCurrent].tittle}
             </Typography>
           </Toolbar>
         </Grid>
@@ -75,14 +105,14 @@ export const CardQuiz = () => {
         }}
       >
         <Grid container direction="row" spacing={1}>
-       
-        {
-            questions[preguntaActual].options.map((qt) =>
-                (
-                   <ButtonAnswer key={qt.textResponse} {...qt} handleAnswerSubmit={handleAnswerSubmit} disable={areDisabled}/>
-                ))
-        } 
-        
+          {questions[questionCurrent].options.map((qt) => (
+            <ButtonAnswer
+              key={qt.textResponse}
+              {...qt}
+              handleAnswerSubmit={handleAnswerSubmit}
+              disable={areDisabled}
+            />
+          ))}
         </Grid>
       </CardContent>
       <CardContent
@@ -90,14 +120,38 @@ export const CardQuiz = () => {
           backgroundColor: "#ede7f6",
         }}
       >
-        <Typography
-          variant="body2"
-          sx={{
-            color: "primary",
-          }}
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
         >
-         Tiempo Restante: {tiempoRestante}
-        </Typography>
+          <Grid container item xs={6} justifyContent={"start"}>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "primary",
+              }}
+            >
+              Tiempo Restante: {timeRestant}
+            </Typography>
+          </Grid>
+          {areDisabled && (
+            <Grid container item xs={2} justifyContent={"end"}>
+              <Button
+                onClick={() => {
+                  setTimeRestant(25);
+                  setAreDisabled(false);
+                  questionCurrent == questions.length - 1
+                    ? setIsFinished(true)
+                    : setQuestionCurrent(questionCurrent + 1);
+                }}
+              >
+                Continuar
+              </Button>
+            </Grid>
+          )}
+        </Grid>
       </CardContent>
     </Card>
   );
