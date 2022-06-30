@@ -18,12 +18,12 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿Cuantas partes conforman un sistema?",
+        tittle: "¿Cuantas son las propiedades de un sistema?",
         options: [
-          { textResponse: "5", isCorrect: true },
-          { textResponse: "4", isCorrect: false },
+          { textResponse: "10", isCorrect: true },
+          { textResponse: "9", isCorrect: false },
+          { textResponse: "7", isCorrect: false },
           { textResponse: "3", isCorrect: false },
-          { textResponse: "6", isCorrect: false },
         ],
       },
       {
@@ -36,30 +36,30 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿pregunta 5?",
+        tittle: "¿Las propiedades de un sistema:",
         options: [
-          { textResponse: "A", isCorrect: false },
-          { textResponse: "B", isCorrect: true },
-          { textResponse: "C", isCorrect: false },
-          { textResponse: "D", isCorrect: false},
+          { textResponse: "Surgen de cada una de las partes", isCorrect: false },
+          { textResponse: "Surgen del conjunto de elementos del sistema", isCorrect: true },
+          { textResponse: "Surgen de las relaciones del sistema", isCorrect: false },
+          { textResponse: "Surgen de los recursos del sistema", isCorrect: false},
         ],
       },
       {
-        tittle: "¿Cuantos niveles jerarquicos tienen los sistemas?",
+        tittle: "Las propiedades del sistema cobran revelancia en los procesos de:",
         options: [
-          { textResponse: "3", isCorrect: false },
-          { textResponse: "5", isCorrect: false },
+          { textResponse: "Equipamiento", isCorrect: false },
+          { textResponse: "Diferencia", isCorrect: false },
+          { textResponse: "Ambiguedad", isCorrect: false },
+          { textResponse: "Frontera", isCorrect: true },
+        ],
+      },
+      {
+        tittle: "¿Que nivel de sistema se caracteriza por sus propiedades morfogenicas?",
+        options: [
+          { textResponse: "8", isCorrect: true },
           { textResponse: "7", isCorrect: false },
-          { textResponse: "9", isCorrect: true },
-        ],
-      },
-      {
-        tittle: "¿?",
-        options: [
-          { textResponse: "A", isCorrect: true },
-          { textResponse: "B", isCorrect: false },
-          { textResponse: "C", isCorrect: false },
-          { textResponse: "D", isCorrect: false },
+          { textResponse: "6", isCorrect: false },
+          { textResponse: "5", isCorrect: false },
         ],
       },
       {
@@ -72,21 +72,19 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿pregunta 9?",
+        tittle: "¿Propiedades que se desprenden por la interaccion de los elementos en un sistema?",
         options: [
-          { textResponse: "A", isCorrect: true },
-          { textResponse: "B", isCorrect: false },
-          { textResponse: "C", isCorrect: false },
-          { textResponse: "D", isCorrect: false },
+          { textResponse: "Emergencia", isCorrect: true },
+          { textResponse: "Elemento", isCorrect: false },
+          { textResponse: "Energia", isCorrect: false },
+          { textResponse: "Equifinalidad", isCorrect: false },
         ],
       },
       {
-        tittle: "¿pregunta 10?",
+        tittle: "¿En terminos generales, los subsistemas tienen las mismas propiedades de los sistemas?",
         options: [
-          { textResponse: "A", isCorrect: false },
-          { textResponse: "B", isCorrect: true },
-          { textResponse: "C", isCorrect: false },
-          { textResponse: "D", isCorrect: false },
+          { textResponse: "Verdadero", isCorrect: false },
+          { textResponse: "Falso", isCorrect: true },
         ],
       },
 ]
