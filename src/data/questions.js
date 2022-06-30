@@ -9,7 +9,7 @@ export const questions = [
         ],
       },
       {
-        tittle: "Segun ______, Se puede hablar de una filosifia de sistemas, ya que toda teoria cientifica de gran alcance tiene aspectos metafisicos?",
+        tittle: "Segun ______, Se puede hablar de una filosifia de sistemas, ya que toda teoria cientifica de gran alcance tiene aspectos metafisicos",
         options: [
           { textResponse: "Kenneth Boulding", isCorrect: false },
           { textResponse: "Ludwing von Bertanlanffy", isCorrect: true },
