@@ -10,6 +10,7 @@ import {
 import { useEffect, useState } from "react";
 import { questions } from "../../../data/questions";
 import { ButtonAnswer } from "./ButtonAnswer";
+import { ProgressBar } from "react-bootstrap";
 
 export const CardQuiz = () => {
   const [isFinished, setIsFinished] = useState(false);
@@ -17,16 +18,31 @@ export const CardQuiz = () => {
   const [questionCurrent, setQuestionCurrent] = useState(0);
   const [timeRestant, setTimeRestant] = useState(25);
   const [areDisabled, setAreDisabled] = useState(false);
+  const [color, setColor] = useState({})
 
-  const handleAnswerSubmit = (isCorrect) => {
-    setTimeRestant(25);
-    if (isCorrect) {
+  const handleAnswerSubmit = (isCorrect, e) => {
+
+    
+    if (isCorrect && !areDisabled) {
       setScore(score + 1);
-      console.log(score);
+      setColor({
+        [e.target.name]: "success"
+      })
     }
-    questionCurrent == questions.length - 1
-      ? setIsFinished(true)
-      : setQuestionCurrent(questionCurrent + 1);
+    else if(!areDisabled){
+      setColor({
+        [e.target.name]: "error"
+      })
+    }
+    setAreDisabled(true)
+
+    setTimeout(() => {
+      setAreDisabled(false)
+      setTimeRestant(25);
+      questionCurrent == questions.length - 1
+        ? setIsFinished(true)
+        : setQuestionCurrent(questionCurrent + 1);
+    }, 1500);
   };
 
   useEffect(() => {
@@ -38,31 +54,26 @@ export const CardQuiz = () => {
     return () => clearInterval(intervalo);
   }, [timeRestant]);
 
-
-  if(isFinished)
-
-  return(
-    <Grid
-      container
-      spacing={0}
-      direction="column"
-      alignItems="center"
-      justifyContent="center"
-      sx={{
-        minHeight: "calc(100vh - 110px)",
-        backgroundColor: "primary.main",
-        padding: 4,
-        borderRadius: 3,
-      }}
-    >
-      <Grid item xs={12}>
-        <Typography variant="h5">
-            Puntuacion: {score}
-        </Typography>
+  if (isFinished)
+    return (
+      <Grid
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        sx={{
+          minHeight: "calc(100vh - 110px)",
+          backgroundColor: "primary.main",
+          padding: 4,
+          borderRadius: 3,
+        }}
+      >
+        <Grid item xs={12}>
+          <Typography variant="h5">Puntuacion: {score}</Typography>
+        </Grid>
       </Grid>
-    </Grid>
-  );
-
+    );
 
   return (
     <Card
@@ -77,6 +88,7 @@ export const CardQuiz = () => {
           backgroundColor: "#ede7f6",
         }}
       />
+
       <CardContent
         sx={{
           backgroundColor: "#ede7f6",
@@ -109,6 +121,7 @@ export const CardQuiz = () => {
             <ButtonAnswer
               key={qt.textResponse}
               {...qt}
+              color={color}
               handleAnswerSubmit={handleAnswerSubmit}
               disable={areDisabled}
             />
@@ -126,18 +139,18 @@ export const CardQuiz = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Grid container item xs={6} justifyContent={"start"}>
-            <Typography
+          <Grid container item xs={8} justifyContent={"start"}>
+            {/* <Typography
               variant="body2"
               sx={{
                 color: "primary",
               }}
             >
               Tiempo Restante: {timeRestant}
-            </Typography>
+            </Typography> */}
           </Grid>
-          {areDisabled && (
-            <Grid container item xs={2} justifyContent={"end"}>
+          {timeRestant===0 &&  (
+            <Grid container item xs={4} justifyContent={"end"}>
               <Button
                 onClick={() => {
                   setTimeRestant(25);
@@ -152,6 +165,14 @@ export const CardQuiz = () => {
             </Grid>
           )}
         </Grid>
+        <div>
+          <ProgressBar
+            striped
+            variant={(timeRestant / 25) * 100 < 20 ? "danger" : "success"}
+            animated
+            now={(timeRestant / 25) * 100}
+          />
+        </div>
       </CardContent>
     </Card>
   );

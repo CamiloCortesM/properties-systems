@@ -4,14 +4,16 @@ export const ButtonAnswer = ({
   textResponse,
   isCorrect,
   handleAnswerSubmit,
-  disable
+  disable,
+  color
 }) => {
   return (
     <Grid item lg={6} md={6} sm={6} xs={12}>
       <Button
         variant="contained"
-        color="primary"
-        disabled={disable}
+        color={color[textResponse] ? color[textResponse] : 'primary'}
+        name={textResponse}
+        disabled={color[textResponse] ? false : disable}
         fullWidth
         onClick={(e) => handleAnswerSubmit(isCorrect, e)}
         sx={{
