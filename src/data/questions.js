@@ -27,7 +27,7 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿Propiedad que tiene sucesos y condiciones que influyen sobre el comportamineto de un sisi¡tema?",
+        tittle: "¿Propiedad que tiene sucesos y condiciones que influyen sobre el comportamineto de un sistema?",
         options: [
           { textResponse: "Armonia", isCorrect: false },
           { textResponse: "Superflua", isCorrect: false },
@@ -36,7 +36,7 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿Las propiedades de un sistema:",
+        tittle: "Las propiedades de un sistema:",
         options: [
           { textResponse: "Surgen de cada una de las partes", isCorrect: false },
           { textResponse: "Surgen del conjunto de elementos del sistema", isCorrect: true },
