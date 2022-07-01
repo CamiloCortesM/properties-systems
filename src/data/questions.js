@@ -2,7 +2,7 @@ export const questions = [
     {
         tittle: "¿Propiedad que tiene un sistema de aprender y modificar un proceso?",
         options: [
-          { textResponse: "Adaptibilidad", isCorrect: true },
+          { textResponse: "Adaptabilidad", isCorrect: true },
           { textResponse: "Circularidad", isCorrect: false },
           { textResponse: "Energia", isCorrect: false },
           { textResponse: "Equilibrio", isCorrect: false },
