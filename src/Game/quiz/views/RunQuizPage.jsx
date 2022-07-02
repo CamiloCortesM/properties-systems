@@ -28,7 +28,7 @@ export const RunQuizPage = ({ setRun }) => {
         >
           <img
             width="100%"
-            src="https://educacion30.b-cdn.net/wp-content/uploads/2019/06/homer.gif"
+            src="https://c.tenor.com/SxJzwBeWoasAAAAC/good-luck-sponge-bob.gif"
           ></img>
         </Grid>
         <Grid
