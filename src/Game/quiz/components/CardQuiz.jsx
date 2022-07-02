@@ -1,6 +1,7 @@
 import {
   Button,
   Card,
+  CardActions,
   CardContent,
   CardHeader,
   Grid,
@@ -18,26 +19,23 @@ export const CardQuiz = () => {
   const [questionCurrent, setQuestionCurrent] = useState(0);
   const [timeRestant, setTimeRestant] = useState(25);
   const [areDisabled, setAreDisabled] = useState(false);
-  const [color, setColor] = useState({})
+  const [color, setColor] = useState({});
 
   const handleAnswerSubmit = (isCorrect, e) => {
-
-    
     if (isCorrect && !areDisabled) {
       setScore(score + 1);
       setColor({
-        [e.target.name]: "success"
-      })
-    }
-    else if(!areDisabled){
+        [e.target.name]: "success",
+      });
+    } else if (!areDisabled) {
       setColor({
-        [e.target.name]: "error"
-      })
+        [e.target.name]: "error",
+      });
     }
-    setAreDisabled(true)
+    setAreDisabled(true);
 
     setTimeout(() => {
-      setAreDisabled(false)
+      setAreDisabled(false);
       setTimeRestant(25);
       questionCurrent == questions.length - 1
         ? setIsFinished(true)
@@ -56,22 +54,39 @@ export const CardQuiz = () => {
 
   if (isFinished)
     return (
-      <Grid
-        container
-        spacing={0}
-        direction="column"
-        alignItems="center"
-        justifyContent="center"
-        sx={{
-          minHeight: "calc(100vh - 110px)",
-          backgroundColor: "primary.main",
-          padding: 4,
-          borderRadius: 3,
-        }}
+      <Grid item container alignItems="center"
+      justifyContent="center" sx={{
+        minHeight: "calc(100vh - 110px)"
+      }}
       >
-        <Grid item xs={12}>
-          <Typography variant="h5">Puntuacion: {score}</Typography>
-        </Grid>
+        <Card sx={{ maxWidth: 500, m: "auto" }}>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Felicitaciones Camilo! 🥳
+            </Typography>
+          <Grid container spacing={2}>
+            <Grid item xs={8}>
+            <Typography variant="body2" color="text.secondary">
+              Descripcion segun el numero de preguntas acertadas
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{
+              mt:2
+            }}>
+              5/10
+            </Typography>
+            </Grid>
+            <Grid item xs={4}>
+            <Typography variant="body2" color="text.secondary">
+              Imagen trofeo
+            </Typography>
+            </Grid>
+          </Grid>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Volver a Jugar</Button>
+            <Button size="small">Logros</Button>
+          </CardActions>
+        </Card>
       </Grid>
     );
 
@@ -149,7 +164,7 @@ export const CardQuiz = () => {
               Tiempo Restante: {timeRestant}
             </Typography> */}
           </Grid>
-          {timeRestant===0 &&  (
+          {timeRestant === 0 && (
             <Grid container item xs={4} justifyContent={"end"}>
               <Button
                 onClick={() => {
