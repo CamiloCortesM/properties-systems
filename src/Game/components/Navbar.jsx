@@ -1,4 +1,4 @@
-import { Avatar, Badge, IconButton, Toolbar, Typography } from "@mui/material";
+import { Avatar, IconButton, Toolbar, Typography } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/material/styles";
