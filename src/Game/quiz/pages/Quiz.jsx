@@ -1,13 +1,9 @@
+import { useState } from "react";
 import { HeaderLayout } from "../../layout/HeaderLayout";
 import { QuizView } from "../views/QuizView";
-// import { RunQuizPage } from "../views/RunQuizPage";
+import { RunQuizPage } from "../views/RunQuizPage";
 
 export const Quiz = () => {
-  return (
-    <HeaderLayout>
-      {/* <RunQuizPage /> */}
-
-      <QuizView />
-    </HeaderLayout>
-  );
+  const [Run, setRun] = useState(false);
+  return <HeaderLayout>{Run ? <QuizView /> : <RunQuizPage setRun={setRun}/>}</HeaderLayout>;
 };
