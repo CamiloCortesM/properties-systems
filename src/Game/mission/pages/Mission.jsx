@@ -7,11 +7,11 @@ import { ContextArchi } from "../../../hooks/ContextArchi";
 
 export const Mission = () => {
   
-const {first} = useContext(ContextArchi)
-console.log(first)
+const {achvt} = useContext(ContextArchi)
+
   // const handleSubmit = () => {
   //   const data = getArchiByName();
-  //   setfirst([
+  //   setachvt([
   //     ...data,
   //     {
   //       name: "logro2",
@@ -64,7 +64,7 @@ console.log(first)
             mt: 3,
           }}
         >
-          {first.map((data) => {
+          {achvt.map((data) => {
             return <CardAchievement {...data} key={data.id} />;
           })}
         </Grid>
