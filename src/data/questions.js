@@ -1,6 +1,6 @@
 export const questions = [
     {
-        tittle: "¿Propiedad que tiene un sistema de aprender y modificar un proceso?",
+        tittle: "Propiedad que tiene un sistema de aprender y modificar un proceso",
         options: [
           { textResponse: "Adaptabilidad", isCorrect: true },
           { textResponse: "Circularidad", isCorrect: false },
@@ -9,7 +9,7 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿Propiedad de un sistema que define su nivel de respuesta y de adaptacion al contexto?",
+        tittle: "Propiedad de un sistema que define su nivel de respuesta y de adaptacion al contexto",
         options: [
           { textResponse: "Estabilidad", isCorrect: false },
           { textResponse: "Homeostasis", isCorrect: true },
@@ -18,7 +18,7 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿Propiedad que tiene para representar a los sistemas cuando no se sabe que elementos o cosas  los componen?",
+        tittle: "Propiedad que tiene para representar a los sistemas cuando no se sabe que elementos o cosas  los componen",
         options: [
           { textResponse: "Caja negra", isCorrect: true },
           { textResponse: "Centralizacion y descentralizacion", isCorrect: false },
@@ -27,7 +27,7 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿Propiedad que tiene sucesos y condiciones que influyen sobre el comportamineto de un sistema?",
+        tittle: "Propiedad que tiene sucesos y condiciones que influyen sobre el comportamineto de un sistema",
         options: [
           { textResponse: "Armonia", isCorrect: false },
           { textResponse: "Superflua", isCorrect: false },
@@ -63,7 +63,7 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿Proceso que busca mantener la energia del sistema?",
+        tittle: "¿Que Proceso que busca mantener la energia del sistema?",
         options: [
           { textResponse: "Circularidad", isCorrect: false },
           { textResponse: "Entropia", isCorrect: true },
@@ -72,7 +72,7 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿Propiedades que se desprenden por la interaccion de los elementos en un sistema?",
+        tittle: "Propiedades que se desprenden por la interaccion de los elementos en un sistema",
         options: [
           { textResponse: "Emergencia", isCorrect: true },
           { textResponse: "Elemento", isCorrect: false },
@@ -81,7 +81,7 @@ export const questions = [
         ],
       },
       {
-        tittle: "¿Propiedad que tiene el proceso que hace referencia a la introduccion de los resultados de las operaciones de un sistema en el mismo",
+        tittle: "¿Que Propiedad tiene el proceso que hace referencia a la introduccion de los resultados de las operaciones de un sistema en el mismo?",
         options: [
           { textResponse: "Adaptabilidad", isCorrect: false },
           { textResponse: "Recursividad", isCorrect: true },
