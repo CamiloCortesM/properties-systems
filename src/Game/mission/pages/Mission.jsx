@@ -1,13 +1,14 @@
 import { Divider, Grid, Typography } from "@mui/material";
-import { useState } from "react";
 import { CardAchievement } from "../components/CardAchievement";
-import { initialData } from "../../../helpers/initialData";
 import { HeaderLayout } from "../../layout/HeaderLayout";
+import { useContext } from "react";
+import { ContextArchi } from "../../../hooks/ContextArchi";
 
 
 export const Mission = () => {
-  const [first, setfirst] = useState(initialData());
-
+  
+const {first} = useContext(ContextArchi)
+console.log(first)
   // const handleSubmit = () => {
   //   const data = getArchiByName();
   //   setfirst([
