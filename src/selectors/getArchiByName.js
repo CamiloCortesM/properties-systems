@@ -1,6 +1,3 @@
-import { initialData } from "../helpers/initialData"
-
-export const getArchiByName = () => {
-    const a = initialData();
-  return a.filter(data=> data.name != "logro2")
+export const getArchiByName = (nm,achvt) => {
+  return achvt.filter(data=> data.name != nm)
 }
