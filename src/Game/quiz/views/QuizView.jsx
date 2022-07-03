@@ -3,7 +3,7 @@ import {
 } from "@mui/material";
 import { CardQuiz } from "../components/CardQuiz";
 
-export const QuizView = () => {
+export const QuizView = ({setRun}) => {
 
   return (
     <Grid
@@ -14,7 +14,7 @@ export const QuizView = () => {
       }}
     >
       <Grid xs={12} item>
-        <CardQuiz />
+        <CardQuiz setRun={setRun}/>
       </Grid>
     </Grid>
   );
