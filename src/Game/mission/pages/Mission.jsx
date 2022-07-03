@@ -9,22 +9,6 @@ export const Mission = () => {
   
 const {achvt} = useContext(ContextArchi)
 
-  // const handleSubmit = () => {
-  //   const data = getArchiByName();
-  //   setachvt([
-  //     ...data,
-  //     {
-  //       name: "logro2",
-  //       attributes: {
-  //         description: "putos",
-  //         complete: false,
-  //         progress: 0,
-  //         url: "image/url.png",
-  //       },
-  //     },
-  //   ]);
-  // };
-
   return (
     <HeaderLayout>
       <Grid

@@ -30,7 +30,7 @@ export const CardQuiz = ({ setRun }) => {
   const OneSmall = useMemo(() => getAchvtById(1, achvt), [achvt]);
   const StylePoints = useMemo(() => getAchvtById(2, achvt), [achvt]);
   const TopTier = useMemo(() => getAchvtById(3, achvt), [achvt]);
-
+  
   const url = useMemo(() => getUrlMedal(score), [score]);
 
 
@@ -51,7 +51,7 @@ export const CardQuiz = ({ setRun }) => {
     ]);
   }
 
-  const handleAnswerSubmit = (isCorrect, e) => {
+  useEffect(() => {
     if (!OneSmall.attributes.complete) {
       const data = getArchiByName(OneSmall.name, achvt);
       setAchvt([
@@ -68,6 +68,14 @@ export const CardQuiz = ({ setRun }) => {
         },
       ]);
     }
+  }, [])
+  
+
+
+
+  const handleAnswerSubmit = (isCorrect, e) => {
+
+    
 
     if (!StylePoints.attributes.complete) {
       const data = getArchiByName(StylePoints.name, achvt);
