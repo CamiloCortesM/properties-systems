@@ -1,4 +1,4 @@
-import { Button, Grid } from "@mui/material";
+import { Button, Divider, Grid, Typography } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 export const RunQuizPage = ({ setRun }) => {
@@ -6,48 +6,72 @@ export const RunQuizPage = ({ setRun }) => {
     <>
       <Grid
         container
-        spacing={0}
-        direction="column"
-        alignItems="center"
-        justifyContent="center"
         sx={{
-          minHeight: "calc(100vh - 110px)",
-          padding: 4,
-          borderRadius: 3,
+          p: 2,
         }}
       >
         <Grid
           item
-          container
-          alignItems="center"
-          justifyContent="center"
+          xs={12}
+          md={12}
           sx={{
-            width: { lg: "40vw",md: "50vw",sm: "60vw", xs: "70vw" },
-            mb: 3,
+            mt: 2,
           }}
         >
-          <img
-            width="100%"
-            src="https://c.tenor.com/SxJzwBeWoasAAAAC/good-luck-sponge-bob.gif"
-          ></img>
+          <Typography
+            component="h3"
+            variant="strong"
+            sx={{
+              textAlign: "center",
+              textTransform: "capitalize",
+            }}
+          >
+            Quiz propiedades de los sistemas
+          </Typography>
+          <Divider />
         </Grid>
         <Grid
           item
-          xs={12}
+          container
+          spacing={0}
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
           sx={{
-            backgroundColor: "red",
+            minHeight: "calc(100vh - 200px)",
+            padding: 4,
+            borderRadius: 3,
           }}
         >
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              setRun(true);
+          <Grid
+            item
+            container
+            alignItems="center"
+            justifyContent="center"
+            sx={{
+              width: { lg: "30vw", md: "40vw", sm: "50vw", xs: "60vw" },
+              mb: 3,
             }}
           >
-            <PlayArrowIcon />
-            Empezar
-          </Button>
+            <img
+              width="100%"
+              src="https://c.tenor.com/SxJzwBeWoasAAAAC/good-luck-sponge-bob.gif"
+              style={{
+                marginBottom:10
+              }}
+            ></img>
+
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => {
+                setRun(true);
+              }}
+            >
+              <PlayArrowIcon />
+              Empezar
+            </Button>
+          </Grid>
         </Grid>
       </Grid>
     </>

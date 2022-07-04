@@ -5,5 +5,9 @@ import { RunQuizPage } from "../views/RunQuizPage";
 
 export const Quiz = () => {
   const [Run, setRun] = useState(false);
-  return <HeaderLayout>{Run ? <QuizView setRun={setRun} /> : <RunQuizPage setRun={setRun}/>}</HeaderLayout>;
+  return (
+    <HeaderLayout>
+      {Run ? <QuizView setRun={setRun} /> : <RunQuizPage setRun={setRun} />}
+    </HeaderLayout>
+  );
 };
