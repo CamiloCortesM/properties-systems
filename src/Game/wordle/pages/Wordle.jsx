@@ -1,4 +1,4 @@
-import { Box, Modal } from "@mui/material";
+import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import { HeaderLayout } from "../../layout/HeaderLayout";
 import { Board } from "../components/Board";
@@ -42,7 +42,7 @@ export const Wordle = () => {
 
   return (
     <HeaderLayout>
-      {error && <Modal>{error}</Modal>}
+      {error && <p>{error}</p>}
       <Box>
         <HeaderWordle />
         <Board
