@@ -43,7 +43,7 @@ export const Board = (props) => {
           });
         } else {
           setBoard((prevBoard) => {
-            if (col < 5) {
+            if (col < 7) {
               if (props.letter !== "ENTER") {
                 prevBoard[row][col][0] = props.letter;
                 setCol(col + 1);
@@ -57,22 +57,23 @@ export const Board = (props) => {
               if (props.letter === "ENTER") {
                 let correctLetters = 0;
                 let word = "";
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 7; i++) {
                   word += prevBoard[row][i][0];
                 }
-                if (words.includes(word.toLowerCase())) {
-                  for (let i = 0; i < 5; i++) {
-                    if (correct[i] === prevBoard[row][i][0]) {
+                if (true) {
+                  for (let i = 0; i < 7; i++) {
+                    console.log(correct[i],prevBoard[row][i][0])
+                    if (correct[i].toLowerCase()  === (prevBoard[row][i][0]).toLowerCase()) {
                       prevBoard[row][i][1] = "C";
                       correctLetters++;
-                    } else if (correct.includes(prevBoard[row][i][0]))
+                    } else if ((correct.toLowerCase()).includes((prevBoard[row][i][0]).toLowerCase()))
                       prevBoard[row][i][1] = "E";
                     else prevBoard[row][i][1] = "N";
                     setRow(row + 1);
-                    if (row === 5) {
+                    if (row === 2) {
                       setLost(true);
                       setTimeout(() => {
-                        setMessage(`It was ${correct}`);
+                        setMessage(`Has perdido`);
                       }, 750);
                     }
 
@@ -84,18 +85,13 @@ export const Board = (props) => {
                   }
                   setChanged(!changed);
 
-                  if (correctLetters === 5) {
+                  if (correctLetters === 7) {
                     setWin(true);
                     setTimeout(() => {
                       setMessage("You WIN");
                     }, 750);
                   }
                   return prevBoard;
-                } else {
-                  props.error("Word not in dictionary");
-                  setTimeout(() => {
-                    props.error("");
-                  }, 1000);
                 }
               }
             }
@@ -149,7 +145,6 @@ export const Board = (props) => {
         }}
       >
         {lost || win ? message : "" } 
-        {/* {lost || win ? message : description } */}
       </Grid>
     </Grid>
   );
