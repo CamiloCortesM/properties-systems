@@ -4,10 +4,6 @@ export const words =[
         description:"Propiedad que mide el nivel de compatibilidad con su medio o contexto.proceso o características en la medida que el medio se lo exige y es estático cuando el medio también lo es."
     },
     {
-        name:"Contexto",
-        description:"El conjunto de objetos exteriores al sistema, pero que influyen decididamente en éste, y a su vez el sistema influye en ellos."
-    },
-    {
         name:"Energia",
         description:"Entradas al sistema o resultados de procesos que hacen que el sistema continue su comportamiento o realice cambios de acuerdo a los cambios que sufra."
     },
