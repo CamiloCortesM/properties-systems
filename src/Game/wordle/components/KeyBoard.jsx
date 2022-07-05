@@ -22,7 +22,8 @@ const Key = (props) => {
   return (
     <button onClick={returnKey} style={{
       height:"3rem",
-      marginRight:2
+      marginRight:2,
+      padding:6
 
     }} >
       {props.value === "DEL" ? <BackspaceIcon /> : props.value}
