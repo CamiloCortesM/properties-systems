@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { words } from "../../../data/word";
 import { Box } from "./Box.jsx";
@@ -6,6 +6,7 @@ import { Box } from "./Box.jsx";
 const word = words[Math.floor(Math.random() * words.length)];
 
 const { name: correct, description } = word;
+
 let defaulBoard = [];
 let defaultLetters = [];
 
@@ -32,7 +33,20 @@ export const Board = (props) => {
 
   useEffect(() => {
     if (win || lost) {
-      console.log("Game ended!");
+      if (win) {
+        console.log("gano")
+      } else {
+        console.log("perdio")
+      }
+      setTimeout(() => {
+        window.location.replace('');
+      }, 2750);
+    }
+  }, [win, lost]);
+
+  useEffect(() => {
+    if (win || lost) {
+      console.log("Juego Terminado!");
     } else {
       if (props.clicks !== 0) {
         if (props.letter === "DEL") {
@@ -48,10 +62,10 @@ export const Board = (props) => {
                 prevBoard[row][col][0] = props.letter;
                 setCol(col + 1);
               } else {
-                props.error("Words are 5 letters long!");
+                props.error("Las palabras tienen que tener 7 letras");
                 setTimeout(() => {
                   props.error("");
-                }, 1000);
+                }, 1500);
               }
             } else {
               if (props.letter === "ENTER") {
@@ -62,11 +76,17 @@ export const Board = (props) => {
                 }
                 if (true) {
                   for (let i = 0; i < 7; i++) {
-                    console.log(correct[i],prevBoard[row][i][0])
-                    if (correct[i].toLowerCase()  === (prevBoard[row][i][0]).toLowerCase()) {
+                    if (
+                      correct[i].toLowerCase() ===
+                      prevBoard[row][i][0].toLowerCase()
+                    ) {
                       prevBoard[row][i][1] = "C";
                       correctLetters++;
-                    } else if ((correct.toLowerCase()).includes((prevBoard[row][i][0]).toLowerCase()))
+                    } else if (
+                      correct
+                        .toLowerCase()
+                        .includes(prevBoard[row][i][0].toLowerCase())
+                    )
                       prevBoard[row][i][1] = "E";
                     else prevBoard[row][i][1] = "N";
                     setRow(row + 1);
@@ -88,7 +108,7 @@ export const Board = (props) => {
                   if (correctLetters === 7) {
                     setWin(true);
                     setTimeout(() => {
-                      setMessage("You WIN");
+                      setMessage("Has Ganado");
                     }, 750);
                   }
                   return prevBoard;
@@ -140,11 +160,29 @@ export const Board = (props) => {
         alignItems="center"
         justifyContent="center"
         sx={{
-          fontWeight: "bold",
-          fontSize:"0.7rem"
+          fontSize: "0.7rem",
         }}
       >
-        {lost || win ? message : "" } 
+        <Typography
+          variant="body1"
+          sx={{
+            textAlign: "center",
+            m: 2,
+          }}
+        >
+          Pista:{description}
+        </Typography>
+      </Grid>
+      <Grid
+        item
+        alignItems="center"
+        justifyContent="center"
+        sx={{
+          fontWeight: "bold",
+          fontSize: "0.7rem",
+        }}
+      >
+        {lost || win ? message : ""}
       </Grid>
     </Grid>
   );

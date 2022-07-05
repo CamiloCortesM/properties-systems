@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Modal, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { HeaderLayout } from "../../layout/HeaderLayout";
 import { Board } from "../components/Board";
@@ -42,7 +42,6 @@ export const Wordle = () => {
 
   return (
     <HeaderLayout>
-      {error && <p>{error}</p>}
       <Box>
         <HeaderWordle />
         <Board
@@ -51,6 +50,22 @@ export const Wordle = () => {
           letters={LettersHandler}
           error={setError}
         />
+        <Box
+          sx={{
+            height: "1rem",
+          }}
+        >
+          {error && (
+            <Typography
+              variant="h5"
+              sx={{
+                textAlign: "center",
+              }}
+            >
+              {error}
+            </Typography>
+          )}
+        </Box>
         <KeyBoard keyHandler={keyHandler} letters={letters} changed={changed} />
       </Box>
     </HeaderLayout>
