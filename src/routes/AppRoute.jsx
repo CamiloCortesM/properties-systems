@@ -1,5 +1,4 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { MissionRoutes } from "../Game/mission/routes/MissionRoutes";
 import { QuizRoutes } from "../Game/quiz/routes/QuizRoutes";
 import { WordleRoutes } from "../Game/wordle/routes/WordleRoutes";
@@ -13,7 +12,7 @@ export const AppRoute = () => {
 
       <Route path="/mission/*" element={<MissionRoutes />} />
 
-      <Route path="/*" element={<WordleRoutes />} />
+      <Route path="/*" element={<Navigate to="/mission" />} />
     </Routes>
   );
 };

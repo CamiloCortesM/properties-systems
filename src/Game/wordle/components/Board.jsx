@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { words } from "../../../data/word";
 import { Box } from "./Box.jsx";
 
@@ -22,6 +22,7 @@ for (let i = 0; i < 3; i++) {
 }
 
 export const Board = (props) => {
+  
   const [letters, setLetters] = useState(defaultLetters);
   const [board, setBoard] = useState(defaulBoard);
   const [changed, setChanged] = useState(false);
@@ -30,6 +31,23 @@ export const Board = (props) => {
   const [win, setWin] = useState(false);
   const [lost, setLost] = useState(false);
   const [message, setMessage] = useState("");
+
+  console.log(defaulBoard)
+
+  const isMounted = useRef(false)
+
+  useEffect(() => {
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 7; j++) {
+        for (let k = 0; k < 2; k++) {
+            defaulBoard[i][j][k]=""
+        }
+      }
+    }
+    isMounted.current = true
+    return () => isMounted.current = false
+  }, [])
+
 
   useEffect(() => {
     if (win || lost) {
