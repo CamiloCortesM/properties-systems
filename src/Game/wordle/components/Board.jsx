@@ -32,16 +32,13 @@ export const Board = (props) => {
   const [lost, setLost] = useState(false);
   const [message, setMessage] = useState("");
 
-  console.log(defaulBoard)
-
   const isMounted = useRef(false)
 
   useEffect(() => {
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 7; j++) {
-        for (let k = 0; k < 2; k++) {
-            defaulBoard[i][j][k]=""
-        }
+            defaulBoard[i][j][1]=""
+            defaulBoard[i][j][0]=""
       }
     }
     isMounted.current = true
@@ -154,7 +151,7 @@ export const Board = (props) => {
         width: "100%",
       }}
     >
-      {board.map((row, key) => {
+      {isMounted.current && board.map((row, key) => {
         return (
           <Grid
             item
