@@ -24,15 +24,15 @@ export const QuizResult = ({score,url,setRun}) => {
           <CardContent>
             {score === 10 ? (
               <Typography gutterBottom variant="h5" component="div">
-                Felicitaciones Camilo! 🥳
+                Felicitaciones! 🥳
               </Typography>
             ) : score > 4 && score < 10 ? (
               <Typography gutterBottom variant="h5" component="div">
-                Puedes Hacerlo Mejor Camilo! 😁
+                Puedes Hacerlo Mejor! 😁
               </Typography>
             ) : (
               <Typography gutterBottom variant="h5" component="div">
-                Ups Vuelve a intentarlo Camilo 😰
+                Ups Vuelve a intentarlo 😰
               </Typography>
             )}
 

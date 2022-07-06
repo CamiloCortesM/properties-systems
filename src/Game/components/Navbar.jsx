@@ -1,4 +1,4 @@
-import { Avatar, IconButton, Toolbar, Typography } from "@mui/material";
+import { IconButton, Toolbar, Typography } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/material/styles";
@@ -52,21 +52,6 @@ export const Navbar = ({ toggleDrawer, open }) => {
         >
           TGS Games
         </Typography>
-        <Typography
-          component="span"
-          variant="p"
-          color="white"
-          sx={{
-            opacity: "85%",
-          }}
-        >
-          Camilo
-        </Typography>
-        <IconButton color="inherit" edge="end">
-          <Avatar atl="profile" sx={{ bgcolor: "#f77762"}}>
-            C
-          </Avatar>
-        </IconButton>
       </Toolbar>
     </AppBar>
   );
