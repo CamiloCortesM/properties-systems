@@ -161,6 +161,7 @@ export const Board = (props) => {
         justifyContent="center"
         sx={{
           fontSize: "0.7rem",
+          width:"100%"
         }}
       >
         <Typography
