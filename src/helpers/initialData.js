@@ -36,7 +36,7 @@ export const initialData = () => {
       name: "Infallible",
       id:4,
       attributes: {
-        description: "Completa el modo de juego Wordle",
+        description: "Gana 3 veces en el modo de juego Wordle",
         complete: false,
         progress: 0,
         url: "https://raw.githubusercontent.com/CamiloCortesM/tgs-games/main/src/assets/infallible.png",
