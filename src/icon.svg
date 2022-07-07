@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g>
+<g xmlns="http://www.w3.org/2000/svg">
+	<g>
+		<polygon points="2.187,15.921 7.041,15.921 7.041,11.066 2.187,11.066 2.187,15.921   " fill="#8617c1" data-original="#000000"/>
+		<path d="M13.871,1.145c3.955,0.07,6.313,2.706,6.66,7.526l1.284-0.208L21.57,0H2.426L2.185,8.463l1.282,0.208    c0.348-4.82,2.671-7.457,6.66-7.526v17.723c0,3.225-0.556,3.746-4.023,3.781V24h11.791v-1.352    c-3.468-0.034-4.024-0.556-4.024-3.781V1.145L13.871,1.145z" fill="#8617c1" data-original="#000000"/>
+		<polygon points="16.918,15.921 21.772,15.921 21.772,11.066 16.918,11.066 16.918,15.921   " fill="#8617c1" data-original="#000000"/>
+	</g>
+</g>
+</g></svg>
