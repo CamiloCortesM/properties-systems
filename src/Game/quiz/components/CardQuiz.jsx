@@ -9,13 +9,12 @@ import {
 } from "@mui/material";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { questions } from "../../../data/questions";
-import { ButtonAnswer } from "./ButtonAnswer";
+import { ButtonAnswer } from "./";
 import { ProgressBar } from "react-bootstrap";
 import { getUrlMedal } from "../../../helpers/getUrlMedal";
 import { QuizResult } from "../views/QuizResult";
 import { ContextArchi } from "../../../hooks/ContextArchi";
-import { getArchiByName } from "../../../selectors/getArchiByName";
-import { getAchvtById } from "../../../selectors/getAchvtById";
+import { getArchiByName,getAchvtById } from "../../../selectors";
 
 export const CardQuiz = ({ setRun }) => {
   const [isFinished, setIsFinished] = useState(false);

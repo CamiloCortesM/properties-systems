@@ -1,10 +1,7 @@
 import { Toolbar } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
-import { CopyRight } from "../components/CopyRight";
-import { Navbar } from "../components/Navbar";
-import { SideBar } from "../components/SideBar";
-
+import { CopyRight, Navbar, SideBar } from "../components";
 
 const drawerWidth = 240;
 
@@ -35,10 +32,8 @@ export const HeaderLayout = ({ children }) => {
       >
         <Toolbar />
         {children}
-        <CopyRight  />
+        <CopyRight />
       </Box>
-      
     </Box>
-   
   );
 };

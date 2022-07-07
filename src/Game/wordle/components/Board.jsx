@@ -2,11 +2,10 @@ import { Grid, Typography } from "@mui/material";
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { words } from "../../../data/word";
 import { ContextArchi } from "../../../hooks/ContextArchi";
-import { getAchvtById } from "../../../selectors/getAchvtById";
-import { getArchiByName } from "../../../selectors/getArchiByName";
-import { Box } from "./Box.jsx";
+import { getAchvtById,getArchiByName } from "../../../selectors";
+import { Box } from "./";
 
-const word = words[Math.floor(Math.random() * words.length)];
+let word = words[Math.floor(Math.random() * words.length)];
 
 const { name: correct, description } = word;
 
@@ -69,7 +68,7 @@ export const Board = (props) => {
             },
           },
         ]);
-      }
+      } 
       if (win) {
         if (!Infallible.attributes.complete) {
           const data = getArchiByName(Infallible.name, achvt);

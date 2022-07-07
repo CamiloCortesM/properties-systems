@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { HeaderLayout } from "../../layout/HeaderLayout";
-import { QuizView } from "../views/QuizView";
-import { RunQuizPage } from "../views/RunQuizPage";
+import { QuizView,RunQuizPage} from "../views";
 
 export const Quiz = () => {
   const [Run, setRun] = useState(false);

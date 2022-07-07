@@ -2,7 +2,7 @@ import { Divider, IconButton, List, Toolbar } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { styled } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
-import { MainListItems, SecondaryListItems } from "./ListItems";
+import { MainListItems, SecondaryListItems } from "./";
 
 const drawerWidth = 240;
 

@@ -1,9 +1,7 @@
-import { Box, Modal, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { HeaderLayout } from "../../layout/HeaderLayout";
-import { Board } from "../components/Board";
-import { HeaderWordle } from "../components/HeaderWordle";
-import { KeyBoard } from "../components/KeyBoard";
+import { Board ,HeaderWordle,KeyBoard} from "../components";
 
 export const Wordle = () => {
   const [letter, setLetter] = useState();
