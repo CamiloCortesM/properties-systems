@@ -1,6 +1,7 @@
 import { Toolbar } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
+import { CopyRight } from "../components/CopyRight";
 import { Navbar } from "../components/Navbar";
 import { SideBar } from "../components/SideBar";
 
@@ -34,7 +35,10 @@ export const HeaderLayout = ({ children }) => {
       >
         <Toolbar />
         {children}
+        <CopyRight  />
       </Box>
+      
     </Box>
+   
   );
 };
