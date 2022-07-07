@@ -1,6 +1,9 @@
 import { Grid, Typography } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { words } from "../../../data/word";
+import { ContextArchi } from "../../../hooks/ContextArchi";
+import { getAchvtById } from "../../../selectors/getAchvtById";
+import { getArchiByName } from "../../../selectors/getArchiByName";
 import { Box } from "./Box.jsx";
 
 const word = words[Math.floor(Math.random() * words.length)];
@@ -22,7 +25,6 @@ for (let i = 0; i < 3; i++) {
 }
 
 export const Board = (props) => {
-  
   const [letters, setLetters] = useState(defaultLetters);
   const [board, setBoard] = useState(defaulBoard);
   const [changed, setChanged] = useState(false);
@@ -32,29 +34,49 @@ export const Board = (props) => {
   const [lost, setLost] = useState(false);
   const [message, setMessage] = useState("");
 
-  const isMounted = useRef(false)
+  const { achvt, setAchvt } = useContext(ContextArchi);
+
+  const isMounted = useRef(false);
+
+  const Infallible = useMemo(() => getAchvtById(4, achvt), [achvt]);
 
   useEffect(() => {
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 7; j++) {
-            defaulBoard[i][j][1]=""
-            defaulBoard[i][j][0]=""
+        defaulBoard[i][j][1] = "";
+        defaulBoard[i][j][0] = "";
       }
     }
-    isMounted.current = true
-    return () => isMounted.current = false
-  }, [])
-
+    isMounted.current = true;
+    return () => (isMounted.current = false);
+  }, []);
 
   useEffect(() => {
     if (win || lost) {
       if (win) {
-        console.log("gano")
-      } else {
-        console.log("perdio")
+        if (!Infallible.attributes.complete) {
+          const data = getArchiByName(Infallible.name, achvt);
+          setAchvt([
+            ...data,
+            {
+              name: Infallible.name,
+              id: Infallible.id,
+              attributes: {
+                description: Infallible.attributes.description,
+                complete:
+                  Infallible.attributes.progress + 33 <= 66 ? false : true,
+                progress:
+                  Infallible.attributes.progress + 33 <= 66
+                    ? Infallible.attributes.progress + 33
+                    : 100,
+                url: Infallible.attributes.url,
+              },
+            },
+          ]);
+        }
       }
       setTimeout(() => {
-        window.location.replace('');
+        window.location.replace("");
       }, 2750);
     }
   }, [win, lost]);
@@ -151,32 +173,33 @@ export const Board = (props) => {
         width: "100%",
       }}
     >
-      {isMounted.current && board.map((row, key) => {
-        return (
-          <Grid
-            item
-            container
-            key={key}
-            alignItems="center"
-            justifyContent="center"
-            sx={{
-              display: "flex",
-              gap: 0.5,
-            }}
-          >
-            {row.map((value, key) => (
-              <Box key={key} value={value[0]} state={value[1]} pos={key} />
-            ))}
-          </Grid>
-        );
-      })}
+      {isMounted.current &&
+        board.map((row, key) => {
+          return (
+            <Grid
+              item
+              container
+              key={key}
+              alignItems="center"
+              justifyContent="center"
+              sx={{
+                display: "flex",
+                gap: 0.5,
+              }}
+            >
+              {row.map((value, key) => (
+                <Box key={key} value={value[0]} state={value[1]} pos={key} />
+              ))}
+            </Grid>
+          );
+        })}
       <Grid
         item
         alignItems="center"
         justifyContent="center"
         sx={{
           fontSize: "0.7rem",
-          width:"100%"
+          width: "100%",
         }}
       >
         <Typography

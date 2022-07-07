@@ -11,7 +11,6 @@ export const Box = (props) => {
   });
 
   useEffect(() => {
-    console.log(props.state)
     setTimeout(() => {
       if (props.state === "C")
         setStyle({
