@@ -39,6 +39,7 @@ export const Board = (props) => {
   const isMounted = useRef(false);
 
   const Infallible = useMemo(() => getAchvtById(4, achvt), [achvt]);
+  const OneSmall = useMemo(() => getAchvtById(1, achvt), [achvt]);
 
   useEffect(() => {
     for (let i = 0; i < 3; i++) {
@@ -53,6 +54,22 @@ export const Board = (props) => {
 
   useEffect(() => {
     if (win || lost) {
+      if (!OneSmall.attributes.complete) {
+        const data = getArchiByName(OneSmall.name, achvt);
+        setAchvt([
+          ...data,
+          {
+            name: OneSmall.name,
+            id: OneSmall.id,
+            attributes: {
+              description: OneSmall.attributes.description,
+              complete: true,
+              progress: 100,
+              url: OneSmall.attributes.url,
+            },
+          },
+        ]);
+      }
       if (win) {
         if (!Infallible.attributes.complete) {
           const data = getArchiByName(Infallible.name, achvt);
