@@ -53,6 +53,7 @@ export const Board = (props) => {
 
   useEffect(() => {
     if (win || lost) {
+      console.log('Juego terminado');
       if (!OneSmall.attributes.complete) {
         const data = getArchiByName(OneSmall.name, achvt);
         setAchvt([
