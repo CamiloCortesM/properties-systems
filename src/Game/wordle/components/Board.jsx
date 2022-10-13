@@ -1,13 +1,13 @@
-import { Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { words } from "../../../data/word";
 import { ContextArchi } from "../../../hooks/ContextArchi";
-import { getAchvtById,getArchiByName } from "../../../selectors";
+import { getAchvtById, getArchiByName } from "../../../selectors";
 import { Box } from "./";
 
 let word = words[Math.floor(Math.random() * words.length)];
 
-const { name: correct, description } = word;
+const { name: correct, description,video} = word;
 
 let defaulBoard = [];
 let defaultLetters = [];
@@ -53,7 +53,7 @@ export const Board = (props) => {
 
   useEffect(() => {
     if (win || lost) {
-      console.log('Juego terminado');
+      console.log("Juego terminado");
       if (!OneSmall.attributes.complete) {
         const data = getArchiByName(OneSmall.name, achvt);
         setAchvt([
@@ -69,7 +69,7 @@ export const Board = (props) => {
             },
           },
         ]);
-      } 
+      }
       if (win) {
         if (!Infallible.attributes.complete) {
           const data = getArchiByName(Infallible.name, achvt);
@@ -92,9 +92,6 @@ export const Board = (props) => {
           ]);
         }
       }
-      setTimeout(() => {
-        window.location.replace("");
-      }, 2750);
     }
   }, [win, lost]);
 
@@ -239,6 +236,42 @@ export const Board = (props) => {
         }}
       >
         {lost || win ? message : ""}
+      </Grid>
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="center"
+        sx={{
+          paddingTop: "10px",
+          fontWeight: "bold",
+          fontSize: "0.7rem",
+        }}
+      >
+        {(win || lost) && (
+          <>
+            <Button
+              variant="outlined"
+              color="primary"
+              sx={{
+                marginRight: "20px",
+              }}
+              onClick={() => {
+                window.location.replace("");
+              }}
+            >
+              Jugar de Nuevo
+            </Button>
+            <Button
+              variant="outlined"
+              color="error"
+              onClick={() => {
+                window.open(video,'_blank');
+              }}
+            >
+              Repasar concepto
+            </Button>
+          </>
+        )}
       </Grid>
     </Grid>
   );
