@@ -1,5 +1,6 @@
 import { Link as RouterLink } from "react-router-dom";
 import ListItemButton from "@mui/material/ListItemButton";
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
@@ -68,7 +69,9 @@ export const SecondaryListItems = () => {
         </ListItemButton>
       </Link>
       <Link
-        href="https://github.com/CamiloCortesM/tgs-games"
+        onClick={() => {
+          window.open("https://github.com/CamiloCortesM/tgs-games", "_blank");
+        }}
         color="inherit"
         sx={{
           textDecoration: 0,
@@ -79,6 +82,25 @@ export const SecondaryListItems = () => {
             <GitHubIcon />
           </ListItemIcon>
           <ListItemText primary="Github" />
+        </ListItemButton>
+      </Link>
+      <Link
+        onClick={() => {
+          window.open(
+            "https://disi.unal.edu.co/~lctorress/tgs/Tgs004.pdf",
+            "_blank"
+          );
+        }}
+        color="inherit"
+        sx={{
+          textDecoration: 0,
+        }}
+      >
+        <ListItemButton>
+          <ListItemIcon>
+            <AutoStoriesIcon />
+          </ListItemIcon>
+          <ListItemText primary="Estudiar" />
         </ListItemButton>
       </Link>
     </>
