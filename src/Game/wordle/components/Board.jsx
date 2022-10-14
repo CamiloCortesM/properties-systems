@@ -52,28 +52,55 @@ export const Board = (props) => {
   }, []);
 
   useEffect(() => {
-    if (win || lost) {
-      if (win) {
-        if (!Infallible.attributes.complete) {
-          const data = getArchiByName(Infallible.name, achvt);
-          setAchvt([
-            ...data,
-            {
-              name: Infallible.name,
-              id: Infallible.id,
-              attributes: {
-                description: Infallible.attributes.description,
-                complete:
-                  Infallible.attributes.progress + 33 <= 66 ? false : true,
-                progress:
-                  Infallible.attributes.progress + 33 <= 66
-                    ? Infallible.attributes.progress + 33
-                    : 100,
-                url: Infallible.attributes.url,
-              },
+    if (win) {
+      if (!Infallible.attributes.complete) {
+        const data = getArchiByName(Infallible.name, achvt);
+        setAchvt([
+          ...data,
+          {
+            name: Infallible.name,
+            id: Infallible.id,
+            attributes: {
+              description: Infallible.attributes.description,
+              complete:
+                Infallible.attributes.progress + 33 <= 66 ? false : true,
+              progress:
+                Infallible.attributes.progress + 33 <= 66
+                  ? Infallible.attributes.progress + 33
+                  : 100,
+              url: Infallible.attributes.url,
             },
-          ]);
-        }
+          },
+          {
+            name: OneSmall.name,
+            id: OneSmall.id,
+            attributes: {
+              description: OneSmall.attributes.description,
+              complete: true,
+              progress: 100,
+              url: OneSmall.attributes.url,
+            },
+          },
+        ]);
+      }
+    }
+    if (lost) {
+      if (!OneSmall.attributes.complete) {
+        const data = getArchiByName(OneSmall.name, achvt);
+        console.log(data);
+        setAchvt([
+          ...data,
+          {
+            name: OneSmall.name,
+            id: OneSmall.id,
+            attributes: {
+              description: OneSmall.attributes.description,
+              complete: true,
+              progress: 100,
+              url: OneSmall.attributes.url,
+            },
+          },
+        ]);
       }
     }
   }, [win, lost]);
