@@ -7,7 +7,7 @@ import { Box } from "./";
 
 let word = words[Math.floor(Math.random() * words.length)];
 
-const { name: correct, description,video} = word;
+const { name: correct, description, video } = word;
 
 let defaulBoard = [];
 let defaultLetters = [];
@@ -53,23 +53,6 @@ export const Board = (props) => {
 
   useEffect(() => {
     if (win || lost) {
-      console.log("Juego terminado");
-      if (!OneSmall.attributes.complete) {
-        const data = getArchiByName(OneSmall.name, achvt);
-        setAchvt([
-          ...data,
-          {
-            name: OneSmall.name,
-            id: OneSmall.id,
-            attributes: {
-              description: OneSmall.attributes.description,
-              complete: true,
-              progress: 100,
-              url: OneSmall.attributes.url,
-            },
-          },
-        ]);
-      }
       if (win) {
         if (!Infallible.attributes.complete) {
           const data = getArchiByName(Infallible.name, achvt);
@@ -261,16 +244,18 @@ export const Board = (props) => {
             >
               Jugar de Nuevo
             </Button>
-            <Button
-              variant="outlined"
-              color="error"
-              onClick={() => {
-                window.open(video,'_blank');
-              }}
-            >
-              Repasar concepto
-            </Button>
           </>
+        )}
+        {lost && (
+          <Button
+            variant="outlined"
+            color="error"
+            onClick={() => {
+              window.open(video, "_blank");
+            }}
+          >
+            Repasar concepto
+          </Button>
         )}
       </Grid>
     </Grid>
