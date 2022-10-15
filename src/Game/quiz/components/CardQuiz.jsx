@@ -14,11 +14,12 @@ import { ProgressBar } from "react-bootstrap";
 import { getUrlMedal } from "../../../helpers/getUrlMedal";
 import { QuizResult } from "../views/QuizResult";
 import { ContextArchi } from "../../../hooks/ContextArchi";
-import { getArchiByName,getAchvtById } from "../../../selectors";
+import { getArchiByName, getAchvtById } from "../../../selectors";
 
 export const CardQuiz = ({ setRun }) => {
   const [isFinished, setIsFinished] = useState(false);
   const [score, setScore] = useState(0);
+  const [fail, setFail] = useState(0);
   const [questionCurrent, setQuestionCurrent] = useState(0);
   const [timeRestant, setTimeRestant] = useState(25);
   const [areDisabled, setAreDisabled] = useState(false);
@@ -31,7 +32,6 @@ export const CardQuiz = ({ setRun }) => {
   const TopTier = useMemo(() => getAchvtById(3, achvt), [achvt]);
 
   const url = useMemo(() => getUrlMedal(score), [score]);
-
 
   if (!TopTier.attributes.complete && score === 10) {
     const data = getArchiByName(TopTier.name, achvt);
@@ -67,12 +67,11 @@ export const CardQuiz = ({ setRun }) => {
         },
       ]);
     }
-  }, [])
-  
-
-
+  }, []);
 
   const handleAnswerSubmit = (isCorrect, e) => {
+    
+    if (fail + score > questionCurrent) return;
 
     if (!StylePoints.attributes.complete) {
       const data = getArchiByName(StylePoints.name, achvt);
@@ -100,10 +99,12 @@ export const CardQuiz = ({ setRun }) => {
         [e.target.name]: "success",
       });
     } else if (!areDisabled) {
+      setFail(fail + 1);
       setColor({
         [e.target.name]: "error",
       });
     }
+
     setAreDisabled(true);
 
     setTimeout(() => {
